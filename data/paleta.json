@@ -1,0 +1,194 @@
+{
+ "Ing. Civil": {
+  "fachada": {
+   "hex": "#61686B",
+   "codigo": "NE296-A",
+   "nombre": "Humo Místico",
+   "rgb": [
+    97,
+    104,
+    107
+   ],
+   "dE": 0.0
+  },
+  "acento": {
+   "hex": "#D57055",
+   "codigo": "117246",
+   "nombre": "Arrecife",
+   "rgb": [
+    213,
+    112,
+    85
+   ],
+   "dE": 0.0
+  },
+  "justificacion": "Gris concreto y rojo ladrillo: los dos materiales que la carrera diseña, calcula y construye. Se conserva el código cromático con el que la comunidad ya reconoce a Civil."
+ },
+ "Salud": {
+  "fachada": {
+   "codigo": "117200",
+   "nombre": "Blanco Puro",
+   "rgb": [
+    252,
+    250,
+    247
+   ]
+  },
+  "acento": {
+   "codigo": "117272",
+   "nombre": "Azul Jovial",
+   "rgb": [
+    13,
+    95,
+    146
+   ]
+  },
+  "justificacion": "Edificio totalmente blanco —asepsia, higiene y luz— con una sola franja azul y la fascia de la cubierta en azul, el código cromático del cuidado sanitario."
+ },
+ "Tecnologias de la Informacion": {
+  "fachada": {
+   "hex": "#BFE0F8",
+   "codigo": "AZ066-P",
+   "nombre": "Lirio de Agua",
+   "rgb": [
+    176,
+    215,
+    239
+   ],
+   "dE": 2.8
+  },
+  "acento": {
+   "hex": "#107AC6",
+   "codigo": "92 TX 7D",
+   "nombre": "",
+   "rgb": [
+    64,
+    121,
+    169
+   ],
+   "dE": 3.6
+  },
+  "justificacion": "Azul tono sobre tono: el color de la conectividad y las pantallas, claro en las fachadas y profundo en los acentos."
+ },
+ "Ciencias Naturales y Agricultura": {
+  "fachada": {
+   "hex": "#D7F8BF",
+   "codigo": "1521",
+   "nombre": "Verde seda",
+   "rgb": [
+    227,
+    234,
+    184
+   ],
+   "dE": 6.6
+  },
+  "acento": {
+   "hex": "#5CC610",
+   "codigo": "1552",
+   "nombre": "Verde primaveral",
+   "rgb": [
+    138,
+    180,
+    81
+   ],
+   "dE": 9.1
+  },
+  "justificacion": "Verdes de hoja nueva y de cultivo: la carrera se integra al paisaje agrícola y forestal que estudia."
+ },
+ "Ciencias Economicas": {
+  "fachada": {
+   "hex": "#F8EEBF",
+   "codigo": "1583",
+   "nombre": "Camelia",
+   "rgb": [
+    245,
+    228,
+    189
+   ],
+   "dE": 4.1
+  },
+  "acento": {
+   "hex": "#C6A810",
+   "codigo": "1525",
+   "nombre": "Amarillo vivo",
+   "rgb": [
+    235,
+    188,
+    0
+   ],
+   "dE": 7.6
+  },
+  "justificacion": "Dorado y crema: valor, prosperidad y emprendimiento, con un amarillo vivo que marca los antepechos."
+ },
+ "Divino Maestro": {
+  "fachada": {
+   "hex": "#EABFF8",
+   "codigo": "VL116-T",
+   "nombre": "Mora Silvestre",
+   "rgb": [
+    209,
+    183,
+    217
+   ],
+   "dE": 7.0
+  },
+  "acento": {
+   "hex": "#9910C6",
+   "codigo": "NE252-D",
+   "nombre": "Noche Estrellada",
+   "rgb": [
+    92,
+    109,
+    118
+   ],
+   "dE": 15.3
+  },
+  "justificacion": "Gama violeta para la vocación docente y la reflexión."
+ },
+ "Administrativo": {
+  "fachada": {
+   "hex": "#E0DCD6",
+   "codigo": "NE205-P",
+   "nombre": "Piedra Lunar",
+   "rgb": [
+    224,
+    220,
+    214
+   ]
+  },
+  "acento": {
+   "hex": "#3F4F64",
+   "codigo": "AZ146-A",
+   "nombre": "Gris Titán",
+   "rgb": [
+    63,
+    79,
+    100
+   ]
+  },
+  "justificacion": "Paleta formal institucional: gris piedra claro y cálido en muros con un azul pizarra sobrio en antepechos y marcos. Transmite seriedad, orden y permanencia, propia de los edificios de gestión y servicios universitarios."
+ },
+ "Ingapirca": {
+  "fachada": {
+   "hex": "#FCFAF7",
+   "codigo": "117200",
+   "nombre": "Blanco Puro",
+   "rgb": [
+    252,
+    250,
+    247
+   ]
+  },
+  "acento": {
+   "hex": "#8E3B37",
+   "codigo": "117228",
+   "nombre": "Rojo Inglés",
+   "rgb": [
+    142,
+    59,
+    55
+   ]
+  },
+  "justificacion": "Se conservan los colores originales del Laboratorio Ingapirca (blanco y rojo ladrillo); solo se restaura la pintura: limpieza, reparación de desconchados y dos manos de pintura nueva en los mismos tonos."
+ }
+}

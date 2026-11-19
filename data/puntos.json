@@ -1,0 +1,1179 @@
+{
+ "crs": "EPSG:32717",
+ "origen": [
+  548224.25,
+  9850832.25,
+  290.84
+ ],
+ "puntos": [
+  {
+   "archivo": "IMG_9688",
+   "carpeta": "04_AGRICULTURA",
+   "facultad": "Ciencias Naturales y Agricultura",
+   "grupo": "AGRICULTURA",
+   "edificios": [
+    "CA_012"
+   ],
+   "paleta": null,
+   "E": 548477.9,
+   "N": 9850456.8,
+   "x": 253.65,
+   "y": -375.45,
+   "z": 50.78,
+   "z_gps": 341.2,
+   "rumbo": 102.8,
+   "fecha": "2026:11:13 09:26:20",
+   "antes": "data/img/antes/IMG_9688.jpg",
+   "despues": "data/img/despues/IMG_9688.jpg"
+  },
+  {
+   "archivo": "IMG_9687",
+   "carpeta": "04_AGRICULTURA",
+   "facultad": "Ciencias Naturales y Agricultura",
+   "grupo": "AGRICULTURA",
+   "edificios": [
+    "CA_013"
+   ],
+   "paleta": null,
+   "E": 548480.7,
+   "N": 9850429.2,
+   "x": 256.45,
+   "y": -403.05,
+   "z": 53.65,
+   "z_gps": 343.5,
+   "rumbo": 254.2,
+   "fecha": "2026:11:13 09:25:40",
+   "antes": "data/img/antes/IMG_9687.jpg",
+   "despues": "data/img/despues/IMG_9687.jpg"
+  },
+  {
+   "archivo": "IMG_9689",
+   "carpeta": "04_AGRICULTURA",
+   "facultad": "Ciencias Naturales y Agricultura",
+   "grupo": "AGRICULTURA",
+   "edificios": [
+    "CA_012"
+   ],
+   "paleta": null,
+   "E": 548477.9,
+   "N": 9850462.0,
+   "x": 253.65,
+   "y": -370.25,
+   "z": 50.35,
+   "z_gps": 340.8,
+   "rumbo": 199.3,
+   "fecha": "2026:11:13 09:26:31",
+   "antes": "data/img/antes/IMG_9689.jpg",
+   "despues": "data/img/despues/IMG_9689.jpg"
+  },
+  {
+   "archivo": "IMG_9686",
+   "carpeta": "04_AGRICULTURA",
+   "facultad": "Ciencias Naturales y Agricultura",
+   "grupo": "AGRICULTURA",
+   "edificios": [
+    "CA_012"
+   ],
+   "paleta": null,
+   "E": 548473.9,
+   "N": 9850443.6,
+   "x": 249.65,
+   "y": -388.65,
+   "z": 52.22,
+   "z_gps": 345.0,
+   "rumbo": 211.7,
+   "fecha": "2026:11:13 09:25:25",
+   "antes": "data/img/antes/IMG_9686.jpg",
+   "despues": "data/img/despues/IMG_9686.jpg"
+  },
+  {
+   "archivo": "IMG_9675",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "BIBLIOTECA Y CENTRO DE IDIOMAS",
+   "edificios": [
+    "BIBLIOTECA (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548528.9,
+   "N": 9850738.0,
+   "x": 304.65,
+   "y": -94.25,
+   "z": 25.56,
+   "z_gps": 315.6,
+   "rumbo": 278.6,
+   "fecha": "2026:11:13 09:18:37",
+   "antes": "data/img/antes/IMG_9675.jpg",
+   "despues": "data/img/despues/IMG_9675.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9674",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "BIBLIOTECA Y CENTRO DE IDIOMAS",
+   "edificios": [
+    "BIBLIOTECA (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548538.2,
+   "N": 9850757.7,
+   "x": 313.95,
+   "y": -74.55,
+   "z": 24.87,
+   "z_gps": 315.5,
+   "rumbo": 285.0,
+   "fecha": "2026:11:13 09:18:11",
+   "antes": "data/img/antes/IMG_9674.jpg",
+   "despues": "data/img/despues/IMG_9674.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9667",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "CASONA",
+   "edificios": [
+    "CASONA (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548454.2,
+   "N": 9850836.0,
+   "x": 229.95,
+   "y": 3.75,
+   "z": 24.16,
+   "z_gps": 314.0,
+   "rumbo": 94.5,
+   "fecha": "2026:11:13 09:13:24",
+   "antes": "data/img/antes/IMG_9667.jpg",
+   "despues": "data/img/despues/IMG_9667.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9663",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "CASONA",
+   "edificios": [
+    "CASONA (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548524.6,
+   "N": 9850805.9,
+   "x": 300.35,
+   "y": -26.35,
+   "z": 23.69,
+   "z_gps": 313.4,
+   "rumbo": 296.7,
+   "fecha": "2026:11:13 09:10:12",
+   "antes": "data/img/antes/IMG_9663.jpg",
+   "despues": "data/img/despues/IMG_9663.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9670",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "CIVL",
+   "edificios": [
+    "CA_001"
+   ],
+   "paleta": null,
+   "E": 548428.8,
+   "N": 9850849.6,
+   "x": 204.55,
+   "y": 17.35,
+   "z": 24.46,
+   "z_gps": 316.9,
+   "rumbo": 160.1,
+   "fecha": "2026:11:13 09:14:19",
+   "antes": "data/img/antes/IMG_9670.jpg",
+   "despues": "data/img/despues/IMG_9670.jpg"
+  },
+  {
+   "archivo": "IMG_9668",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "CIVL",
+   "edificios": [
+    "CA_001"
+   ],
+   "paleta": null,
+   "E": 548452.6,
+   "N": 9850839.1,
+   "x": 228.35,
+   "y": 6.85,
+   "z": 23.78,
+   "z_gps": 313.9,
+   "rumbo": 332.1,
+   "fecha": "2026:11:13 09:13:35",
+   "antes": "data/img/antes/IMG_9668.jpg",
+   "despues": "data/img/despues/IMG_9668.jpg"
+  },
+  {
+   "archivo": "IMG_9669",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "CIVL",
+   "edificios": [
+    "AUD_LA"
+   ],
+   "paleta": null,
+   "E": 548443.9,
+   "N": 9850846.5,
+   "x": 219.65,
+   "y": 14.25,
+   "z": 23.69,
+   "z_gps": 313.9,
+   "rumbo": 266.6,
+   "fecha": "2026:11:13 09:13:57",
+   "antes": "data/img/antes/IMG_9669.jpg",
+   "despues": "data/img/despues/IMG_9669.jpg"
+  },
+  {
+   "archivo": "IMG_9685",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548561.0,
+   "N": 9850551.3,
+   "x": 336.75,
+   "y": -280.95,
+   "z": 42.15,
+   "z_gps": 331.3,
+   "rumbo": 320.2,
+   "fecha": "2026:11:13 09:24:32",
+   "antes": "data/img/antes/IMG_9685.jpg",
+   "despues": "data/img/despues/IMG_9685.jpg"
+  },
+  {
+   "archivo": "IMG_9681",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548510.4,
+   "N": 9850618.3,
+   "x": 286.15,
+   "y": -213.95,
+   "z": 42.84,
+   "z_gps": 331.9,
+   "rumbo": 158.9,
+   "fecha": "2026:11:13 09:22:25",
+   "antes": "data/img/antes/IMG_9681.jpg",
+   "despues": "data/img/despues/IMG_9681.jpg"
+  },
+  {
+   "archivo": "IMG_9680",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548526.4,
+   "N": 9850624.4,
+   "x": 302.15,
+   "y": -207.85,
+   "z": 41.23,
+   "z_gps": 332.4,
+   "rumbo": 211.4,
+   "fecha": "2026:11:13 09:22:07",
+   "antes": "data/img/antes/IMG_9680.jpg",
+   "despues": "data/img/despues/IMG_9680.jpg"
+  },
+  {
+   "archivo": "IMG_9691",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548473.9,
+   "N": 9850595.0,
+   "x": 249.65,
+   "y": -237.25,
+   "z": 44.61,
+   "z_gps": 335.5,
+   "rumbo": 331.0,
+   "fecha": "2026:11:13 09:27:17",
+   "antes": "data/img/antes/IMG_9691.jpg",
+   "despues": "data/img/despues/IMG_9691.jpg"
+  },
+  {
+   "archivo": "IMG_9690",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548477.2,
+   "N": 9850591.0,
+   "x": 252.95,
+   "y": -241.25,
+   "z": 44.08,
+   "z_gps": 334.8,
+   "rumbo": 321.2,
+   "fecha": "2026:11:13 09:27:16",
+   "antes": "data/img/antes/IMG_9690.jpg",
+   "despues": "data/img/despues/IMG_9690.jpg"
+  },
+  {
+   "archivo": "IMG_9684",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548555.1,
+   "N": 9850549.6,
+   "x": 330.85,
+   "y": -282.65,
+   "z": 42.47,
+   "z_gps": 331.7,
+   "rumbo": 328.4,
+   "fecha": "2026:11:13 09:24:22",
+   "antes": "data/img/antes/IMG_9684.jpg",
+   "despues": "data/img/despues/IMG_9684.jpg"
+  },
+  {
+   "archivo": "IMG_9682",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548524.5,
+   "N": 9850607.6,
+   "x": 300.25,
+   "y": -224.65,
+   "z": 42.49,
+   "z_gps": 333.1,
+   "rumbo": 244.8,
+   "fecha": "2026:11:13 09:22:43",
+   "antes": "data/img/antes/IMG_9682.jpg",
+   "despues": "data/img/despues/IMG_9682.jpg"
+  },
+  {
+   "archivo": "IMG_9679",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_010"
+   ],
+   "paleta": null,
+   "E": 548526.4,
+   "N": 9850624.4,
+   "x": 302.15,
+   "y": -207.85,
+   "z": 41.23,
+   "z_gps": 333.0,
+   "rumbo": 175.5,
+   "fecha": "2026:11:13 09:22:05",
+   "antes": "data/img/antes/IMG_9679.jpg",
+   "despues": "data/img/despues/IMG_9679.jpg"
+  },
+  {
+   "archivo": "IMG_9678",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_015"
+   ],
+   "paleta": "Salud",
+   "E": 548566.3,
+   "N": 9850668.4,
+   "x": 342.05,
+   "y": -163.85,
+   "z": 30.34,
+   "z_gps": 320.3,
+   "rumbo": 117.7,
+   "fecha": "2026:11:13 09:21:12",
+   "antes": "data/img/antes/IMG_9678.jpg",
+   "despues": "data/img/despues/IMG_9678.jpg"
+  },
+  {
+   "archivo": "IMG_9677",
+   "carpeta": "05_ECONOMIA",
+   "facultad": "Ciencias Economicas",
+   "grupo": "ECONOMIA",
+   "edificios": [
+    "CA_015"
+   ],
+   "paleta": "Salud",
+   "E": 548566.3,
+   "N": 9850668.4,
+   "x": 342.05,
+   "y": -163.85,
+   "z": 30.34,
+   "z_gps": 320.3,
+   "rumbo": 120.2,
+   "fecha": "2026:11:13 09:21:10",
+   "antes": "data/img/antes/IMG_9677.jpg",
+   "despues": "data/img/despues/IMG_9677.jpg"
+  },
+  {
+   "archivo": "IMG_9666",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "EDIFICIOS ABMINISTRATIVOS",
+   "edificios": [
+    "ADMIN (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548464.4,
+   "N": 9850832.7,
+   "x": 240.15,
+   "y": 0.45,
+   "z": 24.11,
+   "z_gps": 315.4,
+   "rumbo": 212.9,
+   "fecha": "2026:11:13 09:12:51",
+   "antes": "data/img/antes/IMG_9666.jpg",
+   "despues": "data/img/despues/IMG_9666.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9683",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "EDIFICIOS ABMINISTRATIVOS",
+   "edificios": [
+    "ADMIN (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548556.1,
+   "N": 9850547.0,
+   "x": 331.85,
+   "y": -285.25,
+   "z": 42.34,
+   "z_gps": 332.1,
+   "rumbo": 240.8,
+   "fecha": "2026:11:13 09:24:11",
+   "antes": "data/img/antes/IMG_9683.jpg",
+   "despues": "data/img/despues/IMG_9683.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9673",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "EDIFICIOS ABMINISTRATIVOS",
+   "edificios": [
+    "ADMIN (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548545.0,
+   "N": 9850770.3,
+   "x": 320.75,
+   "y": -61.95,
+   "z": 24.87,
+   "z_gps": 314.4,
+   "rumbo": 284.7,
+   "fecha": "2026:11:13 09:17:43",
+   "antes": "data/img/antes/IMG_9673.jpg",
+   "despues": "data/img/despues/IMG_9673.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9672",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "EDIFICIOS ABMINISTRATIVOS",
+   "edificios": [
+    "ADMIN (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548547.5,
+   "N": 9850775.5,
+   "x": 323.25,
+   "y": -56.75,
+   "z": 24.43,
+   "z_gps": 305.1,
+   "rumbo": 12.5,
+   "fecha": "2026:11:13 09:17:33",
+   "antes": "data/img/antes/IMG_9672.jpg",
+   "despues": "data/img/despues/IMG_9672.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9671",
+   "carpeta": "00_MIXTAS",
+   "facultad": "Administrativo",
+   "grupo": "EDIFICIOS ABMINISTRATIVOS",
+   "edificios": [
+    "ADMIN (sin modelo)"
+   ],
+   "paleta": null,
+   "E": 548482.3,
+   "N": 9850799.5,
+   "x": 258.05,
+   "y": -32.75,
+   "z": 25.36,
+   "z_gps": 316.5,
+   "rumbo": 152.9,
+   "fecha": "2026:11:13 09:16:07",
+   "antes": "data/img/antes/IMG_9671.jpg",
+   "despues": "data/img/despues/IMG_9671.jpg",
+   "sin_modelo": true
+  },
+  {
+   "archivo": "IMG_9700",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "ENFERMERIA",
+   "edificios": [
+    "CA_004"
+   ],
+   "paleta": null,
+   "E": 548286.4,
+   "N": 9850817.9,
+   "x": 62.15,
+   "y": -14.35,
+   "z": 45.51,
+   "z_gps": 335.0,
+   "rumbo": 83.1,
+   "fecha": "2026:11:13 09:31:28",
+   "antes": "data/img/antes/IMG_9700.jpg",
+   "despues": "data/img/despues/IMG_9700.jpg"
+  },
+  {
+   "archivo": "IMG_9697",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "ENFERMERIA",
+   "edificios": [
+    "CA_004"
+   ],
+   "paleta": null,
+   "E": 548331.2,
+   "N": 9850845.3,
+   "x": 106.95,
+   "y": 13.05,
+   "z": 42.13,
+   "z_gps": 334.4,
+   "rumbo": 190.2,
+   "fecha": "2026:11:13 09:30:32",
+   "antes": "data/img/antes/IMG_9697.jpg",
+   "despues": "data/img/despues/IMG_9697.jpg"
+  },
+  {
+   "archivo": "IMG_9699",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "ENFERMERIA",
+   "edificios": [
+    "CA_004"
+   ],
+   "paleta": null,
+   "E": 548292.3,
+   "N": 9850829.9,
+   "x": 68.05,
+   "y": -2.35,
+   "z": 44.5,
+   "z_gps": 335.3,
+   "rumbo": 110.3,
+   "fecha": "2026:11:13 09:31:15",
+   "antes": "data/img/antes/IMG_9699.jpg",
+   "despues": "data/img/despues/IMG_9699.jpg"
+  },
+  {
+   "archivo": "IMG_9698",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "ENFERMERIA",
+   "edificios": [
+    "CA_004"
+   ],
+   "paleta": null,
+   "E": 548312.6,
+   "N": 9850847.1,
+   "x": 88.35,
+   "y": 14.85,
+   "z": 42.65,
+   "z_gps": 333.8,
+   "rumbo": 164.6,
+   "fecha": "2026:11:13 09:30:52",
+   "antes": "data/img/antes/IMG_9698.jpg",
+   "despues": "data/img/despues/IMG_9698.jpg"
+  },
+  {
+   "archivo": "IMG_9696",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "ENFERMERIA",
+   "edificios": [
+    "CA_004"
+   ],
+   "paleta": null,
+   "E": 548340.5,
+   "N": 9850831.1,
+   "x": 116.25,
+   "y": -1.15,
+   "z": 41.54,
+   "z_gps": 334.6,
+   "rumbo": 228.5,
+   "fecha": "2026:11:13 09:30:17",
+   "antes": "data/img/antes/IMG_9696.jpg",
+   "despues": "data/img/despues/IMG_9696.jpg"
+  },
+  {
+   "archivo": "IMG_9665",
+   "carpeta": "04_AGRICULTURA",
+   "facultad": "Ciencias Naturales y Agricultura",
+   "grupo": "FORESTAL",
+   "edificios": [
+    "CA_024"
+   ],
+   "paleta": null,
+   "E": 548483.9,
+   "N": 9850819.2,
+   "x": 259.65,
+   "y": -13.05,
+   "z": 24.26,
+   "z_gps": 317.4,
+   "rumbo": 216.3,
+   "fecha": "2026:11:13 09:12:15",
+   "antes": "data/img/antes/IMG_9665.jpg",
+   "despues": "data/img/despues/IMG_9665.jpg"
+  },
+  {
+   "archivo": "IMG_9662",
+   "carpeta": "04_AGRICULTURA",
+   "facultad": "Ciencias Naturales y Agricultura",
+   "grupo": "FORESTAL",
+   "edificios": [
+    "CA_020"
+   ],
+   "paleta": null,
+   "E": 548525.6,
+   "N": 9850805.9,
+   "x": 301.35,
+   "y": -26.35,
+   "z": 23.66,
+   "z_gps": 313.6,
+   "rumbo": 242.3,
+   "fecha": "2026:11:13 09:10:04",
+   "antes": "data/img/antes/IMG_9662.jpg",
+   "despues": "data/img/despues/IMG_9662.jpg"
+  },
+  {
+   "archivo": "IMG_9722",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548439.9,
+   "N": 9850729.2,
+   "x": 215.65,
+   "y": -103.05,
+   "z": 35.89,
+   "z_gps": 323.8,
+   "rumbo": 334.4,
+   "fecha": "2026:11:13 09:49:16",
+   "antes": "data/img/antes/IMG_9722.jpg",
+   "despues": "data/img/despues/IMG_9722.jpg"
+  },
+  {
+   "archivo": "IMG_9721",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548469.6,
+   "N": 9850724.6,
+   "x": 245.35,
+   "y": -107.65,
+   "z": 32.15,
+   "z_gps": 323.2,
+   "rumbo": 228.9,
+   "fecha": "2026:11:13 09:48:48",
+   "antes": "data/img/antes/IMG_9721.jpg",
+   "despues": "data/img/despues/IMG_9721.jpg"
+  },
+  {
+   "archivo": "IMG_9720",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548449.2,
+   "N": 9850739.3,
+   "x": 224.95,
+   "y": -92.95,
+   "z": 34.44,
+   "z_gps": 323.1,
+   "rumbo": 189.6,
+   "fecha": "2026:11:13 09:48:28",
+   "antes": "data/img/antes/IMG_9720.jpg",
+   "despues": "data/img/despues/IMG_9720.jpg"
+  },
+  {
+   "archivo": "IMG_9719",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548457.6,
+   "N": 9850735.6,
+   "x": 233.35,
+   "y": -96.65,
+   "z": 33.39,
+   "z_gps": 322.5,
+   "rumbo": 200.1,
+   "fecha": "2026:11:13 09:48:18",
+   "antes": "data/img/antes/IMG_9719.jpg",
+   "despues": "data/img/despues/IMG_9719.jpg"
+  },
+  {
+   "archivo": "IMG_9693",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548433.1,
+   "N": 9850650.8,
+   "x": 208.85,
+   "y": -181.45,
+   "z": 43.7,
+   "z_gps": 334.2,
+   "rumbo": 358.0,
+   "fecha": "2026:11:13 09:27:43",
+   "antes": "data/img/antes/IMG_9693.jpg",
+   "despues": "data/img/despues/IMG_9693.jpg"
+  },
+  {
+   "archivo": "IMG_9725",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548442.5,
+   "N": 9850727.7,
+   "x": 218.25,
+   "y": -104.55,
+   "z": 35.69,
+   "z_gps": 323.5,
+   "rumbo": 89.0,
+   "fecha": "2026:11:13 09:49:23",
+   "antes": "data/img/antes/IMG_9725.jpg",
+   "despues": "data/img/despues/IMG_9725.jpg"
+  },
+  {
+   "archivo": "IMG_9723",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548439.9,
+   "N": 9850729.2,
+   "x": 215.65,
+   "y": -103.05,
+   "z": 35.89,
+   "z_gps": 323.8,
+   "rumbo": 247.6,
+   "fecha": "2026:11:13 09:49:19",
+   "antes": "data/img/antes/IMG_9723.jpg",
+   "despues": "data/img/despues/IMG_9723.jpg"
+  },
+  {
+   "archivo": "IMG_9695",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548445.8,
+   "N": 9850689.5,
+   "x": 221.55,
+   "y": -142.75,
+   "z": 41.41,
+   "z_gps": 331.3,
+   "rumbo": 26.3,
+   "fecha": "2026:11:13 09:28:23",
+   "antes": "data/img/antes/IMG_9695.jpg",
+   "despues": "data/img/despues/IMG_9695.jpg"
+  },
+  {
+   "archivo": "IMG_9724",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548440.6,
+   "N": 9850729.2,
+   "x": 216.35,
+   "y": -103.05,
+   "z": 35.89,
+   "z_gps": 323.8,
+   "rumbo": 278.6,
+   "fecha": "2026:11:13 09:49:20",
+   "antes": "data/img/antes/IMG_9724.jpg",
+   "despues": "data/img/despues/IMG_9724.jpg"
+  },
+  {
+   "archivo": "IMG_9694",
+   "carpeta": "01_ING_CIVIL",
+   "facultad": "Ing. Civil",
+   "grupo": "INGAPIRCA",
+   "edificios": [
+    "LAB_ING"
+   ],
+   "paleta": "Ingapirca",
+   "E": 548446.7,
+   "N": 9850689.0,
+   "x": 222.45,
+   "y": -143.25,
+   "z": 41.27,
+   "z_gps": 331.6,
+   "rumbo": 220.4,
+   "fecha": "2026:11:13 09:28:18",
+   "antes": "data/img/antes/IMG_9694.jpg",
+   "despues": "data/img/despues/IMG_9694.jpg"
+  },
+  {
+   "archivo": "IMG_9718",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547991.0,
+   "N": 9851202.4,
+   "x": -233.25,
+   "y": 370.15,
+   "z": 9.67,
+   "z_gps": 300.5,
+   "rumbo": 258.7,
+   "fecha": "2026:11:13 09:43:09",
+   "antes": "data/img/antes/IMG_9718.jpg",
+   "despues": "data/img/despues/IMG_9718.jpg"
+  },
+  {
+   "archivo": "IMG_9717",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547991.6,
+   "N": 9851199.3,
+   "x": -232.65,
+   "y": 367.05,
+   "z": 9.72,
+   "z_gps": 299.8,
+   "rumbo": 17.6,
+   "fecha": "2026:11:13 09:43:01",
+   "antes": "data/img/antes/IMG_9717.jpg",
+   "despues": "data/img/despues/IMG_9717.jpg"
+  },
+  {
+   "archivo": "IMG_9716",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547987.6,
+   "N": 9851200.3,
+   "x": -236.65,
+   "y": 368.05,
+   "z": 9.86,
+   "z_gps": 299.7,
+   "rumbo": 49.4,
+   "fecha": "2026:11:13 09:42:55",
+   "antes": "data/img/antes/IMG_9716.jpg",
+   "despues": "data/img/despues/IMG_9716.jpg"
+  },
+  {
+   "archivo": "IMG_9715",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547991.6,
+   "N": 9851191.6,
+   "x": -232.65,
+   "y": 359.35,
+   "z": 10.22,
+   "z_gps": 300.7,
+   "rumbo": 285.3,
+   "fecha": "2026:11:13 09:42:40",
+   "antes": "data/img/antes/IMG_9715.jpg",
+   "despues": "data/img/despues/IMG_9715.jpg"
+  },
+  {
+   "archivo": "IMG_9714",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547985.7,
+   "N": 9851184.2,
+   "x": -238.55,
+   "y": 351.95,
+   "z": 11.04,
+   "z_gps": 301.1,
+   "rumbo": 60.0,
+   "fecha": "2026:11:13 09:42:21",
+   "antes": "data/img/antes/IMG_9714.jpg",
+   "despues": "data/img/despues/IMG_9714.jpg"
+  },
+  {
+   "archivo": "IMG_9712",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547984.2,
+   "N": 9851182.7,
+   "x": -240.05,
+   "y": 350.45,
+   "z": 11.2,
+   "z_gps": 302.9,
+   "rumbo": 330.2,
+   "fecha": "2026:11:13 09:42:05",
+   "antes": "data/img/antes/IMG_9712.jpg",
+   "despues": "data/img/despues/IMG_9712.jpg"
+  },
+  {
+   "archivo": "IMG_9708",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547951.2,
+   "N": 9851219.3,
+   "x": -273.05,
+   "y": 387.05,
+   "z": 8.96,
+   "z_gps": 298.0,
+   "rumbo": 129.0,
+   "fecha": "2026:11:13 09:40:17",
+   "antes": "data/img/antes/IMG_9708.jpg",
+   "despues": "data/img/despues/IMG_9708.jpg"
+  },
+  {
+   "archivo": "IMG_9707",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547949.3,
+   "N": 9851214.4,
+   "x": -274.95,
+   "y": 382.15,
+   "z": 9.11,
+   "z_gps": 298.7,
+   "rumbo": 351.3,
+   "fecha": "2026:11:13 09:40:06",
+   "antes": "data/img/antes/IMG_9707.jpg",
+   "despues": "data/img/despues/IMG_9707.jpg"
+  },
+  {
+   "archivo": "IMG_9706",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547945.9,
+   "N": 9851212.9,
+   "x": -278.35,
+   "y": 380.65,
+   "z": 9.15,
+   "z_gps": 298.7,
+   "rumbo": 33.5,
+   "fecha": "2026:11:13 09:39:57",
+   "antes": "data/img/antes/IMG_9706.jpg",
+   "despues": "data/img/despues/IMG_9706.jpg"
+  },
+  {
+   "archivo": "IMG_9705",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547940.0,
+   "N": 9851200.8,
+   "x": -284.25,
+   "y": 368.55,
+   "z": 9.56,
+   "z_gps": 300.1,
+   "rumbo": 88.4,
+   "fecha": "2026:11:13 09:39:38",
+   "antes": "data/img/antes/IMG_9705.jpg",
+   "despues": "data/img/despues/IMG_9705.jpg"
+  },
+  {
+   "archivo": "IMG_9713",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "AUD_CX"
+   ],
+   "paleta": null,
+   "E": 547989.2,
+   "N": 9851184.9,
+   "x": -235.05,
+   "y": 352.65,
+   "z": 10.8,
+   "z_gps": 301.3,
+   "rumbo": 172.6,
+   "fecha": "2026:11:13 09:42:13",
+   "antes": "data/img/antes/IMG_9713.jpg",
+   "despues": "data/img/despues/IMG_9713.jpg"
+  },
+  {
+   "archivo": "IMG_9704",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_032"
+   ],
+   "paleta": null,
+   "E": 547961.4,
+   "N": 9851174.2,
+   "x": -262.85,
+   "y": 341.95,
+   "z": 11.24,
+   "z_gps": 302.3,
+   "rumbo": 19.7,
+   "fecha": "2026:11:13 09:38:57",
+   "antes": "data/img/antes/IMG_9704.jpg",
+   "despues": "data/img/despues/IMG_9704.jpg"
+  },
+  {
+   "archivo": "IMG_9711",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547957.9,
+   "N": 9851219.6,
+   "x": -266.35,
+   "y": 387.35,
+   "z": 9.14,
+   "z_gps": 299.7,
+   "rumbo": 348.4,
+   "fecha": "2026:11:13 09:40:43",
+   "antes": "data/img/antes/IMG_9711.jpg",
+   "despues": "data/img/despues/IMG_9711.jpg"
+  },
+  {
+   "archivo": "IMG_9710",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547953.6,
+   "N": 9851221.2,
+   "x": -270.65,
+   "y": 388.95,
+   "z": 8.97,
+   "z_gps": 298.7,
+   "rumbo": 63.7,
+   "fecha": "2026:11:13 09:40:34",
+   "antes": "data/img/antes/IMG_9710.jpg",
+   "despues": "data/img/despues/IMG_9710.jpg"
+  },
+  {
+   "archivo": "IMG_9709",
+   "carpeta": "03_TIC",
+   "facultad": "Tecnologias de la Informacion",
+   "grupo": "TICS",
+   "edificios": [
+    "CA_030"
+   ],
+   "paleta": null,
+   "E": 547951.2,
+   "N": 9851219.0,
+   "x": -273.05,
+   "y": 386.75,
+   "z": 8.96,
+   "z_gps": 298.4,
+   "rumbo": 53.9,
+   "fecha": "2026:11:13 09:40:22",
+   "antes": "data/img/antes/IMG_9709.jpg",
+   "despues": "data/img/despues/IMG_9709.jpg"
+  }
+ ]
+}

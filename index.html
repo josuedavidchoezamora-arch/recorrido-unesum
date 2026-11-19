@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recorrido UNESUM</title>
+<link rel="icon" href="data/logos/logo_UNESUM.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Estilo "field guide" (DESIGN.md San Rita) + identidad UNESUM */
+:root{
+  --mint:#e2ffcc; --sage:#84907f; --ink:#161b13; --charcoal:#2d3329; --topo:#dde2e4; --black:#000;
+  --display:'Bebas Neue',Anton,Oswald,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--ink);color:var(--mint);font-family:var(--mono);font-size:12px;letter-spacing:-.01em;line-height:1.2;overflow:hidden;-webkit-tap-highlight-color:transparent}
+button,select,input,textarea{font:inherit;color:inherit}
+button{background:transparent;border:1px solid rgba(226,255,204,.35);padding:4px 8px;font-size:9px;text-transform:uppercase;cursor:pointer;border-radius:0;opacity:.85}
+button:hover{border-color:var(--mint);opacity:1}
+button.on{background:rgba(226,255,204,.16);border-color:var(--mint);opacity:1}
+select{background:transparent;border:1px solid rgba(226,255,204,.35);padding:3px 6px;font-size:9px;border-radius:0;text-transform:uppercase}
+/* cabecera */
+header{position:fixed;top:0;left:0;right:0;height:56px;display:flex;align-items:center;gap:14px;padding:0 16px;z-index:20;background:linear-gradient(var(--ink),rgba(22,27,19,.0))}
+header img{height:34px}
+.marca{font-family:var(--display);font-size:30px;line-height:.9;color:var(--mint)}
+.marca small{font-family:var(--mono);font-size:10px;display:block;letter-spacing:-.01em;text-transform:uppercase;color:var(--sage)}
+header .sp{flex:1}
+/* visor */
+#visor{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+#escena{position:relative;transition:opacity .45s}
+#escena img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;user-select:none;-webkit-user-drag:none}
+#despues{clip-path:inset(0 0 0 50%)}
+#divisor{position:absolute;top:0;bottom:0;left:50%;width:0;border-left:2px solid var(--mint);cursor:ew-resize;touch-action:none}
+#divisor::after{content:'ANTES | DESPUÉS';position:absolute;top:50%;left:-60px;width:120px;text-align:center;background:var(--ink);color:var(--mint);border:1px solid var(--mint);font-size:10px;padding:4px 0;transform:translateY(-50%)}
+#capa{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#pines{position:absolute;inset:0}
+.pin{position:absolute;width:18px;height:18px;margin:-9px 0 0 -9px;border:1.5px solid var(--mint);border-radius:50%;background:rgba(22,27,19,.6);cursor:pointer}
+.pin span{position:absolute;left:22px;top:-2px;white-space:nowrap;background:var(--ink);padding:2px 6px;border:1px solid var(--mint);font-size:10px}
+.etq{position:absolute;top:8px;font-size:9px;opacity:.85;background:var(--ink);padding:3px 8px;border:1px solid var(--mint);text-transform:uppercase}
+#escena.lado #antes{width:50%}
+#escena.lado #despues{left:50%;width:50%;clip-path:none!important;opacity:1!important}
+#sinpar{position:absolute;top:12px;left:12px;background:var(--ink);border:1px solid var(--mint);padding:6px 10px;text-transform:uppercase;font-size:10px;display:none}
+/* barra de controles */
+#controles{position:fixed;left:16px;bottom:16px;z-index:20;display:flex;flex-wrap:wrap;gap:4px;align-items:center;max-width:calc(100% - 300px);background:rgba(22,27,19,.55);padding:4px;border:0}
+#controles button{padding:3px 7px;font-size:9px}
+#lOpac,#lUmbral{display:none!important}
+#controles.op #lOpac,#controles.cb #lUmbral{display:flex!important}
+#controles label{display:flex;gap:6px;align-items:center;text-transform:uppercase;font-size:10px}
+input[type=range]{accent-color:#e2ffcc;width:110px}
+/* panel */
+#panel{position:fixed;top:64px;right:16px;width:320px;max-height:calc(100% - 420px);overflow:auto;z-index:20;background:rgba(22,27,19,.92);border:1px solid var(--charcoal);padding:16px}
+#panel.min{max-height:none;width:auto;overflow:hidden;padding:8px 10px}
+#panel.min > :not(.cab){display:none}
+#panel.min .cab{gap:10px}
+#panel h2{font-family:var(--display);font-size:40px;font-weight:400;line-height:.9;color:var(--mint);margin:6px 0 10px}
+#panel h3{font-size:10px;text-transform:uppercase;color:var(--sage);margin:14px 0 6px;font-weight:400}
+.fila{display:flex;gap:8px;align-items:center;margin:4px 0}
+.muestra{width:34px;height:22px;border:1px solid var(--mint)}
+#panel textarea{width:100%;height:70px;background:var(--charcoal);border:1px solid var(--sage);padding:6px;border-radius:0;resize:vertical}
+.chip{display:inline-block;border:1px solid var(--mint);padding:2px 6px;margin:2px 4px 2px 0;text-transform:uppercase;font-size:10px}
+.cab{display:flex;justify-content:space-between;align-items:center}
+/* minimapa */
+#mapa{position:fixed;right:12px;bottom:12px;width:300px;height:220px;min-width:180px;min-height:26px;z-index:21;background:var(--topo);border:1px solid var(--mint);resize:both;overflow:hidden;direction:rtl}
+#mapa > *{direction:ltr}
+#mapa.min{height:26px!important;width:160px!important;resize:none}
+#mapa .bar{position:absolute;top:0;left:0;right:0;height:26px;display:flex;align-items:center;gap:6px;padding:0 8px;background:var(--ink);z-index:2}
+#mapa .bar b{font-family:var(--display);font-size:16px;font-weight:400;flex:1}
+#mapa .bar button{padding:2px 6px;font-size:8px}
+#mapa canvas{position:absolute;top:26px;left:0}
+#leyenda{position:absolute;left:6px;bottom:4px;color:var(--charcoal);font-size:8px;text-transform:uppercase;pointer-events:none}
+/* tarjeta de transicion */
+#tarjeta{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:30;background:var(--ink);border:1px solid var(--mint);padding:20px 26px;min-width:300px;opacity:0;pointer-events:none;transition:opacity .4s}
+#tarjeta.ver{opacity:1}
+#tarjeta .t{font-family:var(--display);font-size:48px;line-height:.9;margin-bottom:10px}
+#tarjeta .d{display:grid;grid-template-columns:auto auto;gap:4px 18px;text-transform:uppercase;font-size:11px}
+#tarjeta .n{margin-top:10px;color:var(--sage);max-width:360px}
+#ayuda{position:fixed;left:16px;top:64px;z-index:19;color:var(--sage);font-size:10px;text-transform:uppercase}
+@media (max-width:900px){#panel{width:260px}.marca small{display:none}#controles{max-width:calc(100% - 32px);bottom:auto;top:56px}#mapa{width:240px;height:180px}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="visor">
+  <div id="escena">
+    <img id="antes" alt="Foto actual">
+    <img id="despues" alt="Propuesta de pintura">
+    <canvas id="capa"></canvas>
+    <div id="pines"></div>
+    <div id="divisor"></div>
+    <div class="etq" style="left:8px">Antes · foto real</div>
+    <div class="etq" style="right:8px">Después · propuesta IA</div>
+    <div id="sinpar">Render de propuesta pendiente</div>
+  </div>
+</div>
+
+<header>
+  <img src="data/logos/logo_UNESUM.png" alt="UNESUM">
+  <div class="marca">Recorrido UNESUM<small>Propuesta de pintura institucional · Jipijapa</small></div>
+  <div class="sp"></div>
+  <select id="filtro" title="Filtrar por facultad"><option value="">Todas las facultades</option></select>
+  <button id="ant" title="Punto anterior">◀</button>
+  <button id="sig" title="Punto siguiente">▶</button>
+</header>
+
+<div id="controles">
+  <button data-modo="deslizar" class="on">Deslizar</button>
+  <button data-modo="opacidad">Opacidad</button>
+  <button data-modo="alternar">Alternar</button>
+  <button data-modo="lado">Lado</button>
+  <label id="lOpac">Opacidad <input id="opac" type="range" min="0" max="100" value="100"></label>
+  <button id="btnCambios">Cambios</button>
+  <label id="lUmbral">ΔE <input id="umbral" type="range" min="5" max="40" value="15"><span id="umbralV">15</span></label>
+  <button id="btnPin">+ Pin</button>
+</div>
+
+<aside id="panel" class="min">
+  <div class="cab"><span id="pFac" class="chip">—</span><b id="pMini" style="font-family:var(--display);font-size:22px;font-weight:400"></b><button id="minPanel" style="padding:2px 8px">Info</button></div>
+  <h2 id="pTitulo">—</h2>
+  <div id="pDatos"></div>
+  <h3>Paleta Pintuco</h3>
+  <div id="pPaleta"></div>
+  <h3>Justificación</h3>
+  <div id="pJust"></div>
+  <h3>Nota del punto</h3>
+  <textarea id="nota" placeholder="Escribe una nota para este punto…"></textarea>
+  <h3>Pines sobre la foto</h3>
+  <div id="pPines">Sin pines.</div>
+  <h3>Datos</h3>
+  <div class="fila"><button id="exportar">Exportar JSON</button><button id="importarBtn">Importar</button><input id="importar" type="file" accept=".json" hidden></div>
+</aside>
+
+<div id="mapa">
+  <div class="bar"><b>Minimapa</b><button id="vista3d">3D</button><button id="planta">Planta</button><button id="minMapa">–</button></div>
+  <div id="leyenda">Curvas cada 1 m · maestras cada 5 m</div>
+</div>
+
+<div id="tarjeta"><div class="t" id="tT">—</div><div class="d" id="tD"></div><div class="n" id="tN"></div></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ---------------------------------------------------------------- datos
+const [TER, EDI, PTS, PAL] = await Promise.all(
+  ['terreno', 'edificios', 'puntos', 'paleta'].map(n => fetch(`data/${n}.json`).then(r => r.json())));
+const puntos = PTS.puntos;
+const hex = c => '#' + c.map(v => v.toString(16).padStart(2, '0')).join('');
+// acento de cada facultad (color del marcador)
+const ACENTO = {}; for (const [f, v] of Object.entries(PAL)) ACENTO[f] = hex(v.acento.rgb);
+// edificio -> facultad (para colorear huellas en el minimapa)
+const FAC_EDIF = {CA_001:'Ing. Civil',CA_002:'Ing. Civil',AUD_LA:'Ing. Civil',LAB_ING:'Ingapirca',CA_004:'Salud',CA_015:'Salud',
+  CA_030:'Tecnologias de la Informacion',CA_032:'Tecnologias de la Informacion',AUD_CX:'Tecnologias de la Informacion',
+  CA_012:'Ciencias Naturales y Agricultura',CA_013:'Ciencias Naturales y Agricultura',CA_020:'Ciencias Naturales y Agricultura',
+  CA_021:'Ciencias Naturales y Agricultura',CA_024:'Ciencias Naturales y Agricultura',CA_010:'Ciencias Economicas',CN_035:'Divino Maestro',EC_033:'Administrativo'};
+// justificaciones particulares por edificio (prevalecen sobre la de la facultad)
+const JUST_EDIF = {
+  AUD_LA: 'Auditorio de uso común: cuerpo blanco y torre en rojo ladrillo Arrecife, como el auditorio real; conserva la identidad de Ing. Civil.',
+  LAB_ING: 'Laboratorio de materiales de Ing. Civil: mismos tonos de la carrera, gris concreto y rojo ladrillo.',
+  'CASONA (sin modelo)': 'Edificio patrimonial de madera: solo se restaura su pintura y barniz originales, sin cambiar sus colores.',
+};
+const NOMBRE_FAC = {'Ing. Civil':'Ingeniería Civil','Salud':'Salud','Tecnologias de la Informacion':'Tecnologías de la Información',
+  'Ciencias Naturales y Agricultura':'Ciencias Naturales y Agricultura','Ciencias Economicas':'Ciencias Económicas',
+  'Divino Maestro':'Divino Maestro','Administrativo':'Servicios administrativos'};
+
+// notas y pines guardados en el navegador
+const CLAVE = 'recorrido_unesum_v1';
+let NOTAS = {}; try { NOTAS = JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) {}
+const guardar = () => { try { localStorage.setItem(CLAVE, JSON.stringify(NOTAS)); } catch (e) {} };
+const datoDe = a => (NOTAS[a] ??= { nota: '', pines: [] });
+
+// ---------------------------------------------------------------- visor de fotos
+const $ = id => document.getElementById(id);
+const escena = $('escena'), imgA = $('antes'), imgD = $('despues'), capa = $('capa'), divisor = $('divisor');
+let modo = 'deslizar', pos = 50, activo = -1, verCambios = false, modoPin = false, mostrandoDespues = true;
+
+function ajustarEscena() {
+  const W = innerWidth, H = innerHeight;
+  const lado = modo === 'lado' && activo >= 0 && !!puntos[activo].despues;
+  escena.classList.toggle('lado', lado);
+  const ar = (imgA.naturalWidth || 4) / (imgA.naturalHeight || 3) * (lado ? 2 : 1);
+  let w = W, h = W / ar; if (h > H) { h = H; w = H * ar; }
+  escena.style.width = w + 'px'; escena.style.height = h + 'px';
+  capa.width = w; capa.height = h; dibujarCambios(); dibujarPines();
+}
+addEventListener('resize', ajustarEscena);
+
+function aplicarModo() {
+  document.querySelectorAll('[data-modo]').forEach(b => b.classList.toggle('on', b.dataset.modo === modo));
+  const op = $('opac').value / 100;
+  divisor.style.display = modo === 'deslizar' ? '' : 'none';
+  imgD.style.clipPath = modo === 'deslizar' ? `inset(0 0 0 ${pos}%)` : 'none';
+  imgD.style.opacity = modo === 'opacidad' ? op : modo === 'alternar' ? (mostrandoDespues ? 1 : 0) : 1;
+  divisor.style.left = pos + '%';
+  $('controles').classList.toggle('op', modo === 'opacidad'); $('controles').classList.toggle('cb', verCambios);
+  ajustarEscena();
+}
+document.querySelectorAll('[data-modo]').forEach(b => b.onclick = () => { modo = b.dataset.modo; aplicarModo(); });
+$('opac').oninput = aplicarModo;
+
+// divisor arrastrable (raton y tactil)
+divisor.addEventListener('pointerdown', e => {
+  divisor.setPointerCapture(e.pointerId);
+  const mover = ev => { const r = escena.getBoundingClientRect(); pos = Math.min(100, Math.max(0, (ev.clientX - r.left) / r.width * 100)); aplicarModo(); };
+  divisor.onpointermove = mover; divisor.onpointerup = () => divisor.onpointermove = null;
+});
+// toque: alternar o colocar pin
+escena.addEventListener('click', e => {
+  if (e.target === divisor) return;
+  const r = escena.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+  if (modoPin) {
+    const t = prompt('Texto del pin:'); if (t) { datoDe(puntos[activo].archivo).pines.push({ x, y, t }); guardar(); dibujarPines(); }
+    modoPin = false; $('btnPin').classList.remove('on'); return;
+  }
+  if (modo === 'alternar') { mostrandoDespues = !mostrandoDespues; aplicarModo(); }
+});
+$('btnPin').onclick = () => { modoPin = !modoPin; $('btnPin').classList.toggle('on', modoPin); };
+
+function dibujarPines() {
+  const cont = $('pines'); cont.innerHTML = ''; if (activo < 0) return;
+  const d = datoDe(puntos[activo].archivo);
+  d.pines.forEach((p, i) => {
+    const el = document.createElement('div'); el.className = 'pin'; el.style.left = p.x * 100 + '%'; el.style.top = p.y * 100 + '%';
+    el.innerHTML = `<span>${p.t}</span>`; el.title = 'Toca para borrar';
+    el.onclick = ev => { ev.stopPropagation(); if (confirm('¿Borrar este pin?')) { d.pines.splice(i, 1); guardar(); dibujarPines(); } };
+    cont.appendChild(el);
+  });
+  $('pPines').innerHTML = d.pines.length ? d.pines.map((p, i) => `<div>${i + 1}. ${p.t}</div>`).join('') : 'Sin pines.';
+}
+
+// ---------------------------------------------------------------- deteccion de cambios (ΔE Lab)
+const cacheCambios = {};
+function lab(r, g, b) {
+  const f = c => (c /= 255) > 0.04045 ? ((c + 0.055) / 1.055) ** 2.4 : c / 12.92;
+  r = f(r); g = f(g); b = f(b);
+  let x = (r * .4124 + g * .3576 + b * .1805) / .95047, y = r * .2126 + g * .7152 + b * .0722, z = (r * .0193 + g * .1192 + b * .9505) / 1.08883;
+  const t = v => v > 0.008856 ? Math.cbrt(v) : 7.787 * v + 16 / 116;
+  x = t(x); y = t(y); z = t(z);
+  return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+}
+function cargarImg(src) { return new Promise((ok, mal) => { const i = new Image(); i.onload = () => ok(i); i.onerror = mal; i.src = src; }); }
+async function calcularCambios(p, umbral) {
+  const clave = p.archivo + '|' + umbral; if (cacheCambios[clave]) return cacheCambios[clave];
+  if (!p.despues) return null;
+  const [a, d] = await Promise.all([cargarImg(p.antes), cargarImg(p.despues)]);
+  const W = 480, H = Math.round(W * a.naturalHeight / a.naturalWidth);
+  const cv = new OffscreenCanvas(W, H), cx = cv.getContext('2d', { willReadFrequently: true });
+  cx.drawImage(a, 0, 0, W, H); const A = cx.getImageData(0, 0, W, H).data;
+  cx.drawImage(d, 0, 0, W, H); const D = cx.getImageData(0, 0, W, H).data;
+  let m = new Uint8Array(W * H);
+  for (let i = 0, k = 0; k < W * H; k++, i += 4) {
+    const la = lab(A[i], A[i + 1], A[i + 2]), ld = lab(D[i], D[i + 1], D[i + 2]);
+    const y = Math.floor(k / W);
+    // cielo: tercio-mitad superior, azulado o muy claro y poco saturado
+    const cielo = y < H * 0.55 && (la[2] < -8 || (la[0] > 82 && Math.hypot(la[1], la[2]) < 9));
+    if (cielo) continue;
+    const de = Math.hypot(la[0] - ld[0], la[1] - ld[1], la[2] - ld[2]);
+    if (de > umbral) m[k] = 1;
+  }
+  // limpieza morfologica: apertura y cierre 3x3
+  const op = (src, min) => { const o = new Uint8Array(W * H);
+    for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) {
+      let s = 0; for (let j = -1; j <= 1; j++) for (let i = -1; i <= 1; i++) s += src[(y + j) * W + x + i];
+      o[y * W + x] = min ? (s === 9 ? 1 : 0) : (s > 0 ? 1 : 0); } return o; };
+  m = op(op(m, true), false); m = op(op(m, false), true);
+  // componentes conexas; se descartan las menores al 0,5 % de la imagen
+  const lbl = new Int32Array(W * H), minA = W * H * 0.005, zonas = []; let n = 0;
+  for (let k = 0; k < W * H; k++) if (m[k] && !lbl[k]) {
+    n++; const pila = [k], px = []; lbl[k] = n;
+    while (pila.length) { const q = pila.pop(); px.push(q); const x = q % W, y = (q / W) | 0;
+      for (const [dx, dy] of [[1,0],[-1,0],[0,1],[0,-1]]) { const xx = x + dx, yy = y + dy;
+        if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue; const r = yy * W + xx;
+        if (m[r] && !lbl[r]) { lbl[r] = n; pila.push(r); } } }
+    if (px.length >= minA) zonas.push(n); else px.forEach(q => lbl[q] = -1);
+  }
+  const ok = new Set(zonas);
+  const res = { W, H, lbl, ok, zonas: zonas.length };
+  cacheCambios[clave] = res; return res;
+}
+async function dibujarCambios() {
+  const g = capa.getContext('2d'); g.clearRect(0, 0, capa.width, capa.height);
+  if (!verCambios || activo < 0) return;
+  const r = await calcularCambios(puntos[activo], +$('umbral').value); if (!r) return;
+  const { W, H, lbl, ok } = r, sx = capa.width / W / (modo === 'lado' ? 2 : 1), sy = capa.height / H;
+  g.fillStyle = 'rgba(226,255,204,.18)'; g.strokeStyle = '#e2ffcc'; g.lineWidth = 1.5;
+  for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) {
+    const v = lbl[y * W + x]; if (!ok.has(v)) continue;
+    g.fillRect(x * sx, y * sy, sx + .5, sy + .5);
+    if (lbl[y * W + x + 1] !== v || lbl[y * W + x - 1] !== v || lbl[(y + 1) * W + x] !== v || lbl[(y - 1) * W + x] !== v) {
+      g.fillStyle = '#e2ffcc'; g.fillRect(x * sx - .5, y * sy - .5, 2, 2); g.fillStyle = 'rgba(226,255,204,.18)'; }
+  }
+}
+$('btnCambios').onclick = () => { verCambios = !verCambios; $('btnCambios').classList.toggle('on', verCambios); $('controles').classList.toggle('cb', verCambios); dibujarCambios(); };
+$('umbral').oninput = () => { $('umbralV').textContent = $('umbral').value; dibujarCambios(); };
+
+// ---------------------------------------------------------------- panel
+function panel(p) {
+  const fac = p.facultad, pal = PAL[p.paleta || fac], ed = p.edificios[0];
+  $('pFac').textContent = NOMBRE_FAC[fac] || fac; $('pFac').style.borderColor = ACENTO[fac];
+  $('pTitulo').textContent = ed; $('pMini').textContent = ed;
+  $('pDatos').innerHTML = `<div>Foto ${p.archivo} · rumbo ${p.rumbo ?? '—'}°</div>
+    <div>E ${p.E.toFixed(1)} · N ${p.N.toFixed(1)} · Z ${(p.z + PTS.origen[2]).toFixed(1)} m</div>
+    ${p.sin_modelo ? '<div class="chip" style="margin-top:6px">Sin modelo BIM: no se cuantifica</div>' : ''}`;
+  const sw = (t, c) => `<div class="fila"><div class="muestra" style="background:${hex(c.rgb)}"></div><div>${t}<br>${c.codigo} ${c.nombre}</div></div>`;
+  $('pPaleta').innerHTML = p.edificios[0] === 'CASONA (sin modelo)' ? 'Restauración de la pintura y barniz existentes.' :
+    p.edificios[0] === 'AUD_LA' ? sw('Cuerpo', { rgb: [252, 250, 247], codigo: '117200', nombre: 'Blanco Puro' }) + sw('Acento', pal.acento) :
+    sw('Fachada', pal.fachada) + sw('Acento', pal.acento);
+  $('pJust').textContent = JUST_EDIF[ed] || pal.justificacion;
+  $('nota').value = datoDe(p.archivo).nota;
+}
+$('nota').oninput = () => { datoDe(puntos[activo].archivo).nota = $('nota').value; guardar(); };
+$('minPanel').onclick = () => { const m = $('panel').classList.toggle('min'); $('minPanel').textContent = m ? 'Info' : '–'; $('pMini').style.display = m ? '' : 'none'; };
+
+// exportar / importar todo (notas y pines)
+$('exportar').onclick = () => {
+  const b = new Blob([JSON.stringify({ proyecto: 'Recorrido UNESUM', fecha: new Date().toISOString(), notas: NOTAS }, null, 1)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'recorrido_unesum_notas.json'; a.click();
+};
+$('importarBtn').onclick = () => $('importar').click();
+$('importar').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try { const j = JSON.parse(await f.text()); NOTAS = j.notas || j; guardar(); irA(activo, false); alert('Notas importadas.'); }
+  catch (err) { alert('El archivo no es válido.'); }
+};
+
+// ---------------------------------------------------------------- minimapa 3D
+const mapa = $('mapa');
+const ren = new THREE.WebGLRenderer({ antialias: true }); ren.setPixelRatio(Math.min(devicePixelRatio, 2));
+mapa.appendChild(ren.domElement);
+const esc3 = new THREE.Scene(); esc3.background = new THREE.Color('#dde2e4');
+const cam = new THREE.PerspectiveCamera(40, 1, 1, 6000); cam.up.set(0, 0, 1);
+const ctl = new OrbitControls(cam, ren.domElement); ctl.enableDamping = true; ctl.screenSpacePanning = true;
+
+// terreno con color por elevacion y curvas de nivel (1 m / maestras 5 m) en el shader
+// relieve exagerado x1.8 para que la topografia se lea en perspectiva (las curvas usan la cota real)
+const EXAG = 1.8;
+let zmin = Infinity, zmax = -Infinity; for (let i = 2; i < TER.vertices.length; i += 3) { zmin = Math.min(zmin, TER.vertices[i]); zmax = Math.max(zmax, TER.vertices[i]); }
+const vEx = TER.vertices.slice(); for (let i = 2; i < vEx.length; i += 3) vEx[i] = zmin + (vEx[i] - zmin) * EXAG;
+const gT = new THREE.BufferGeometry();
+gT.setAttribute('position', new THREE.Float32BufferAttribute(vEx, 3)); gT.setIndex(TER.indices); gT.computeVertexNormals();
+const matT = new THREE.ShaderMaterial({
+  uniforms: { zmin: { value: zmin }, zmax: { value: zmax }, z0: { value: TER.origen[2] }, ex: { value: EXAG } },
+  vertexShader: `varying float h; varying vec3 n; void main(){ h=position.z; n=normal; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+  fragmentShader: `uniform float zmin,zmax,z0,ex; varying float h; varying vec3 n;
+    float linea(float v,float paso,float g){ float f=abs(fract(v/paso+.5)-.5)*paso; float w=fwidth(v)*g; return 1.-smoothstep(0.,w,f); }
+    void main(){
+      float hr=zmin+(h-zmin)/ex; float t=clamp((hr-zmin)/(zmax-zmin),0.,1.);
+      vec3 c=mix(vec3(.80,.86,.76),vec3(.52,.56,.50),t); c=mix(c,vec3(.36,.40,.33),smoothstep(.7,1.,t));
+      float luz=.62+.38*clamp(dot(normalize(n),normalize(vec3(-.4,.5,.8))),0.,1.); c*=luz;
+      float az=hr+z0; c=mix(c,vec3(.18,.2,.16),.35*linea(az,1.,1.)); c=mix(c,vec3(.09,.11,.07),.8*linea(az,5.,1.6));
+      gl_FragColor=vec4(c,1.);
+    }`,
+  extensions: { derivatives: true }
+});
+esc3.add(new THREE.Mesh(gT, matT));
+esc3.add(new THREE.HemisphereLight('#ffffff', '#84907f', 1.1)); const sol = new THREE.DirectionalLight('#ffffff', 1.4); sol.position.set(-300, -200, 500); esc3.add(sol);
+const rayT = new THREE.Raycaster();
+const malla = esc3.children[0];
+function zEn(x, y) { rayT.set(new THREE.Vector3(x, y, 2000), new THREE.Vector3(0, 0, -1)); const h = rayT.intersectObject(malla)[0]; return h ? h.point.z : 0; }
+
+// huellas de edificios
+for (const e of EDI.edificios) {
+  const col = new THREE.Color(ACENTO[FAC_EDIF[e.id]] || '#2d3329');
+  for (const p of e.poligonos) {
+    const sh = new THREE.Shape(p.map(([x, y]) => new THREE.Vector2(x, y)));
+    const z = Math.min(...p.map(([x, y]) => zEn(x, y))) - 0.5, alto = 9;
+    const geo = new THREE.ExtrudeGeometry(sh, { depth: alto + 0.5, bevelEnabled: false });
+    const m = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ color: col }));
+    m.position.z = z; esc3.add(m);
+    const ar = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 30), new THREE.LineBasicMaterial({ color: '#161b13' }));
+    ar.position.z = z; esc3.add(ar);
+  }
+}
+// marcadores de fotos con cono de direccion
+const marcas = [];
+puntos.forEach((p, i) => {
+  const col = ACENTO[p.facultad] || '#e2ffcc', z = zEn(p.x, p.y) + 3;
+  const g = new THREE.Group(); g.position.set(p.x, p.y, z);
+  const esf = new THREE.Mesh(new THREE.SphereGeometry(2.2, 16, 12), new THREE.MeshBasicMaterial({ color: col }));
+  const borde = new THREE.Mesh(new THREE.SphereGeometry(2.7, 16, 12), new THREE.MeshBasicMaterial({ color: '#161b13', side: THREE.BackSide }));
+  g.add(esf, borde);
+  if (p.rumbo != null) {
+    const cono = new THREE.Mesh(new THREE.ConeGeometry(3.5, 10, 16, 1, true), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: .45, side: THREE.DoubleSide }));
+    const r = THREE.MathUtils.degToRad(p.rumbo);
+    cono.position.set(Math.sin(r) * 7, Math.cos(r) * 7, 0); cono.rotation.z = -r + Math.PI; // la punta mira hacia el punto
+    g.add(cono);
+  }
+  esf.userData.i = i; g.userData = { esf, i }; esc3.add(g); marcas.push(g);
+});
+const anillo = new THREE.Mesh(new THREE.TorusGeometry(5, .8, 8, 32), new THREE.MeshBasicMaterial({ color: '#000' })); esc3.add(anillo);
+
+function tamMapa() {
+  const w = mapa.clientWidth, h = Math.max(1, mapa.clientHeight - 26);
+  ren.setSize(w, h); cam.aspect = w / h; cam.updateProjectionMatrix();
+}
+new ResizeObserver(tamMapa).observe(mapa); tamMapa();
+const posDe = i => marcas[i] ? marcas[i].position.clone() : ctl.target.clone();
+function vistaPlanta(i, alto = 260) {
+  const t = posDe(i); ctl.target.copy(t); cam.position.set(t.x, t.y - 0.01, t.z + alto); ctl.update();
+}
+// vista en perspectiva 3D: desde el suroeste, ~35 grados sobre el horizonte
+function vista3D(i, dist = 210) {
+  const t = posDe(i); ctl.target.copy(t);
+  cam.position.set(t.x - dist * 0.35, t.y - dist * 0.6, t.z + dist * 0.8); ctl.update();
+}
+$('planta').onclick = () => vistaPlanta(activo);
+$('vista3d').onclick = () => vista3D(activo);
+$('minMapa').onclick = () => { mapa.classList.toggle('min'); $('minMapa').textContent = mapa.classList.contains('min') ? '+' : '–'; };
+
+// tocar un punto en el minimapa
+const ray = new THREE.Raycaster(); let bajo = null;
+ren.domElement.addEventListener('pointerdown', e => bajo = [e.clientX, e.clientY]);
+ren.domElement.addEventListener('pointerup', e => {
+  if (!bajo || Math.hypot(e.clientX - bajo[0], e.clientY - bajo[1]) > 6) return;
+  const r = ren.domElement.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1), cam);
+  ray.params.Points = { threshold: 3 };
+  const vis = marcas.filter(m => m.visible).map(m => m.userData.esf);
+  const h = ray.intersectObjects(vis)[0]; if (h) irA(h.object.userData.i, true);
+});
+
+// animacion: seguimiento suave del punto activo
+let objetivo = null;
+(function bucle() {
+  requestAnimationFrame(bucle);
+  if (objetivo) {
+    const d = objetivo.clone().sub(ctl.target);
+    if (d.length() < .05) objetivo = null; else { const s = d.multiplyScalar(.12); ctl.target.add(s); cam.position.add(s); }
+  }
+  const t = performance.now() / 600; anillo.scale.setScalar(1 + .15 * Math.sin(t));
+  ctl.update(); ren.render(esc3, cam);
+})();
+
+// ---------------------------------------------------------------- navegacion entre puntos
+const filtro = $('filtro');
+[...new Set(puntos.map(p => p.facultad))].forEach(f => { const o = document.createElement('option'); o.value = f; o.textContent = NOMBRE_FAC[f] || f; filtro.appendChild(o); });
+filtro.onchange = () => { marcas.forEach((m, i) => m.visible = !filtro.value || puntos[i].facultad === filtro.value);
+  if (filtro.value && puntos[activo].facultad !== filtro.value) irA(puntos.findIndex(p => p.facultad === filtro.value), true); };
+const visibles = () => puntos.map((p, i) => i).filter(i => marcas[i].visible);
+$('sig').onclick = () => { const v = visibles(); irA(v[(v.indexOf(activo) + 1) % v.length], true); };
+$('ant').onclick = () => { const v = visibles(); irA(v[(v.indexOf(activo) - 1 + v.length) % v.length], true); };
+addEventListener('keydown', e => { if (e.target.tagName === 'TEXTAREA') return; if (e.key === 'ArrowRight') $('sig').click(); if (e.key === 'ArrowLeft') $('ant').click(); });
+
+async function tarjeta(o, d) {
+  const dh = Math.hypot(d.x - o.x, d.y - o.y), dz = (d.z ?? 0) - (o.z ?? 0);
+  $('tT').textContent = d.edificios[0];
+  $('tD').innerHTML = `<span>Distancia</span><b>${dh.toFixed(1)} m</b><span>Δz</span><b>${dz >= 0 ? '+' : ''}${dz.toFixed(1)} m</b>
+    <span>Pendiente</span><b>${dh > 0 ? (dz / dh * 100).toFixed(1) : '0.0'} %</b><span>Zonas que cambian</span><b id="tZ">…</b>`;
+  const nota = datoDe(d.archivo).nota; $('tN').textContent = nota ? nota.split('\n')[0] : 'Sin nota para este punto.';
+  $('tarjeta').classList.add('ver'); clearTimeout(tarjeta.t); tarjeta.t = setTimeout(() => $('tarjeta').classList.remove('ver'), 3500);
+  const r = await calcularCambios(d, +$('umbral').value).catch(() => null);
+  if ($('tZ')) $('tZ').textContent = r ? r.zonas : 'sin render';
+}
+
+function irA(i, animar) {
+  if (i == null || i < 0) return;
+  const prev = activo >= 0 ? puntos[activo] : null, p = puntos[i]; activo = i;
+  escena.style.opacity = 0;
+  setTimeout(() => {
+    imgA.onload = () => { ajustarEscena(); escena.style.opacity = 1; };
+    imgA.src = p.antes;
+    if (p.despues) { imgD.src = p.despues; imgD.style.display = ''; divisor.style.visibility = ''; $('sinpar').style.display = 'none'; }
+    else { imgD.removeAttribute('src'); imgD.style.display = 'none'; divisor.style.visibility = 'hidden'; $('sinpar').style.display = 'block'; }
+    panel(p); dibujarPines(); aplicarModo();
+  }, animar ? 350 : 0);
+  marcas.forEach((m, k) => m.scale.setScalar(k === i ? 1.6 : 1));
+  anillo.position.copy(marcas[i].position);
+  objetivo = posDe(i);
+  if (prev && animar && prev !== p) tarjeta(prev, p);
+}
+
+// arranque: primer punto que ya tenga render de propuesta
+const inicio = puntos.findIndex(p => p.despues);
+irA(inicio >= 0 ? inicio : 0, false);
+vista3D(inicio >= 0 ? inicio : 0);
+</script>
+</body>
+</html>
