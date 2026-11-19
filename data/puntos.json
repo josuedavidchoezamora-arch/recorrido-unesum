@@ -1174,6 +1174,186 @@
    "fecha": "2026:11:13 09:40:22",
    "antes": "data/img/antes/IMG_9709.jpg",
    "despues": "data/img/despues/IMG_9709.jpg"
+  },
+  {
+   "archivo": "LC_01",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "LAB CLINICO",
+   "edificios": [
+    "CA_015"
+   ],
+   "paleta": null,
+   "E": 548486.2,
+   "N": 9850671.2,
+   "x": 261.95,
+   "y": -161.05,
+   "z": 36.05,
+   "z_gps": null,
+   "rumbo": 48,
+   "fecha": "2026:11:19 12:11:47",
+   "antes": "data/img/antes/LC_01.jpg",
+   "despues": "data/img/despues/LC_01.jpg"
+  },
+  {
+   "archivo": "LC_02",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "LAB CLINICO",
+   "edificios": [
+    "CA_015"
+   ],
+   "paleta": null,
+   "E": 548527.2,
+   "N": 9850670.2,
+   "x": 302.95,
+   "y": -162.05,
+   "z": 31.62,
+   "z_gps": null,
+   "rumbo": 318,
+   "fecha": "2026:11:19 12:11:47",
+   "antes": "data/img/antes/LC_02.jpg",
+   "despues": "data/img/despues/LC_02.jpg"
+  },
+  {
+   "archivo": "LC_03",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "LAB CLINICO",
+   "edificios": [
+    "CA_015"
+   ],
+   "paleta": null,
+   "E": 548488.2,
+   "N": 9850713.2,
+   "x": 263.95,
+   "y": -119.05,
+   "z": 31.65,
+   "z_gps": null,
+   "rumbo": 138,
+   "fecha": "2026:11:19 12:11:47",
+   "antes": "data/img/antes/LC_03.jpg",
+   "despues": "data/img/despues/LC_03.jpg"
+  },
+  {
+   "archivo": "LC_04",
+   "carpeta": "02_SALUD",
+   "facultad": "Salud",
+   "grupo": "LAB CLINICO",
+   "edificios": [
+    "CA_015"
+   ],
+   "paleta": null,
+   "E": 548534.2,
+   "N": 9850714.2,
+   "x": 309.95,
+   "y": -118.05,
+   "z": 26.55,
+   "z_gps": null,
+   "rumbo": 228,
+   "fecha": "2026:11:19 12:11:47",
+   "antes": "data/img/antes/LC_04.jpg",
+   "despues": "data/img/despues/LC_04.jpg"
+  },
+  {
+   "archivo": "DM_EXT_A",
+   "carpeta": "06_DIVINO",
+   "facultad": "Divino Maestro",
+   "grupo": "DIVINO MAESTRO",
+   "edificios": [
+    "CN_035"
+   ],
+   "E": 544780.6,
+   "N": 9849601.3,
+   "x": -3443.66,
+   "y": -1230.94,
+   "z": 6.16,
+   "z_gps": null,
+   "rumbo": 315,
+   "fecha": null,
+   "antes": "data/img/antes/DM_EXT_A.jpg",
+   "despues": "data/img/despues/DM_EXT_A.jpg",
+   "antes_es_modelo": true
+  },
+  {
+   "archivo": "DM_EXT_B",
+   "carpeta": "06_DIVINO",
+   "facultad": "Divino Maestro",
+   "grupo": "DIVINO MAESTRO",
+   "edificios": [
+    "CN_035"
+   ],
+   "E": 544725.6,
+   "N": 9849611.3,
+   "x": -3498.66,
+   "y": -1220.94,
+   "z": 6.16,
+   "z_gps": null,
+   "rumbo": 340,
+   "fecha": null,
+   "antes": "data/img/antes/DM_EXT_B.jpg",
+   "despues": "data/img/despues/DM_EXT_B.jpg",
+   "antes_es_modelo": true
+  },
+  {
+   "archivo": "DM_EXT_C",
+   "carpeta": "06_DIVINO",
+   "facultad": "Divino Maestro",
+   "grupo": "DIVINO MAESTRO",
+   "edificios": [
+    "CN_035"
+   ],
+   "E": 544635.6,
+   "N": 9849646.3,
+   "x": -3588.66,
+   "y": -1185.94,
+   "z": 6.16,
+   "z_gps": null,
+   "rumbo": 70,
+   "fecha": null,
+   "antes": "data/img/antes/DM_EXT_C.jpg",
+   "despues": "data/img/despues/DM_EXT_C.jpg",
+   "antes_es_modelo": true
+  },
+  {
+   "archivo": "DM_INT_A",
+   "carpeta": "06_DIVINO",
+   "facultad": "Divino Maestro",
+   "grupo": "DIVINO MAESTRO",
+   "edificios": [
+    "CN_035"
+   ],
+   "E": 544711.6,
+   "N": 9849673.3,
+   "x": -3512.66,
+   "y": -1158.94,
+   "z": 6.16,
+   "z_gps": null,
+   "rumbo": 250,
+   "fecha": null,
+   "antes": "data/img/antes/DM_INT_A.jpg",
+   "despues": "data/img/despues/DM_INT_A.jpg",
+   "antes_es_modelo": true
+  },
+  {
+   "archivo": "DM_INT_B",
+   "carpeta": "06_DIVINO",
+   "facultad": "Divino Maestro",
+   "grupo": "DIVINO MAESTRO",
+   "edificios": [
+    "CN_035"
+   ],
+   "E": 544699.6,
+   "N": 9849673.3,
+   "x": -3524.66,
+   "y": -1158.94,
+   "z": 6.16,
+   "z_gps": null,
+   "rumbo": 250,
+   "fecha": null,
+   "antes": "data/img/antes/DM_INT_B.jpg",
+   "despues": "data/img/despues/DM_INT_B.jpg",
+   "antes_es_modelo": true
   }
  ]
 }

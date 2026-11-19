@@ -302,7 +302,8 @@ function panel(p) {
   $('pTitulo').textContent = ed; $('pMini').textContent = ed;
   $('pDatos').innerHTML = `<div>Foto ${p.archivo} · rumbo ${p.rumbo ?? '—'}°</div>
     <div>E ${p.E.toFixed(1)} · N ${p.N.toFixed(1)} · Z ${(p.z + PTS.origen[2]).toFixed(1)} m</div>
-    ${p.sin_modelo ? '<div class="chip" style="margin-top:6px">Sin modelo BIM: no se cuantifica</div>' : ''}`;
+    ${p.sin_modelo ? '<div class="chip" style="margin-top:6px">Sin modelo BIM: no se cuantifica</div>' : ''}
+    ${p.antes_es_modelo ? '<div class="chip" style="margin-top:6px">Sin fotografías: el ANTES es la vista del modelo BIM (Revit)</div>' : ''}`;
   const sw = (t, c) => `<div class="fila"><div class="muestra" style="background:${hex(c.rgb)}"></div><div>${t}<br>${c.codigo} ${c.nombre}</div></div>`;
   $('pPaleta').innerHTML = p.edificios[0] === 'CASONA (sin modelo)' ? 'Restauración de la pintura y barniz existentes.' :
     p.edificios[0] === 'AUD_LA' ? sw('Cuerpo', { rgb: [252, 250, 247], codigo: '117200', nombre: 'Blanco Puro' }) + sw('Acento', pal.acento) :
